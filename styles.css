@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100%; /* Ensure enough scrollable content */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    background: radial-gradient(circle at center, #240046 0%, #3c096c 30%, #10002b 60%, #0d001a 90%);
+    overflow-y: auto;
+    position: relative;
+    height: 100%;
+    flex-direction: column;
+}
+
+.header {
+    width: 100%;
+    text-align: center;
+    font-size: 3rem; /* Default font size for larger screens */
+    font-weight: bold;
+    color: white;
+    top: 0;
+    z-index: 100; /* Ensure it stays above other content */
+    padding: 20px 0;
+    background: transparent;
+    text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; /* Glow effect */
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;  /* Wraps boxes to the next row after 3 */
+    justify-content: space-between; /* Ensures even spacing between boxes */
+    gap: 20px;
+    z-index: 10;
+    padding: 20px;
+    max-width: 960px; /* Limits the maximum width */
+    margin: 0 auto; /* Center the container */
+    padding-top: 80px;
+}
+
+.friend-box {
+    background: linear-gradient(145deg, #1a1a1a, #333);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7), 0 5px 15px rgba(255, 255, 255, 0.1) inset;
+    transition: transform 0.4s, box-shadow 0.4s;
+    text-align: center;
+    width: 25%; /* Each box takes up 30% of the container */
+    cursor: pointer;
+    border: 5px solid transparent;
+    margin-bottom: 20px; /* Ensure space between rows */
+}
+
+.friend-box:nth-child(odd) {
+    border-color: #ff6347;
+}
+
+.friend-box:nth-child(even) {
+    border-color: #20b2aa;
+}
+
+
+/* Image styles */
+.friend-box img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #000000;
+}
+
+/* Name and text styling */
+.name {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    color: #eee;
+    transition: color 0.3s, transform 0.3s;
+}
+.friend-box:hover .name {
+    color: #ff4500;
+    transform: scale(1.1);
+}
+
+/* Details box styles with glow */
+.details {
+    display: none;
+    margin-top: 15px;
+    background-color: #222;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: #ddd;
+}
+.insta-link {
+    color: #48e4ef; /* Instagram brand color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make the text bold */
+    display: flex;
+    align-items: center; /* Center the icon and text */
+    margin-left: 25px;
+}
+
+.insta-link i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+.details p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    @media (max-width: 768px) {
+        .header {
+            font-size: 2rem; /* Smaller font size */
+            padding: 15px 0;
+        }
+
+        .container {
+            flex-direction: column;
+            padding: 10px;
+            padding-top: 120px; /* Adjust padding for mobile */
+        }
+
+        .friend-box {
+            width: 80%; /* Full width for each friend box on mobile */
+            margin-bottom: 20px;
+        }
+
+        .name {
+            font-size: 1.2rem; /* Adjust text size for mobile */
+        }
+    }
+    .details p {
+        font-size: 0.9rem; /* Smaller details text */
+    }
+}
+
+.keyword {
+    color: #FFD700; /* Golden color to highlight */
+    cursor: pointer; /* Pointer cursor to indicate it's clickable */
+    text-decoration: underline; /* Optional: underline to indicate link */
+}
+
+.extra-details {
+    margin-top: 10px;
+    font-style: italic;
+    color: #B0B0B0; /* Slightly dimmed color */
+}
